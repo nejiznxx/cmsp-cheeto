@@ -4,7 +4,6 @@
 * existe dois metodos pra usar o script
 
 
-  
 ## Tampermonkey
 * copie o script do arquivo tampermonkey.js
 * coloque no tampermonkey
@@ -15,3 +14,7 @@ dps eu faço to com preguicap pra caralho
 
 ## Support
 as vezes da trabalho pra krl fazer essas porra se tu poder colocar uma estrela no meu perfil eu agradeco :P
+
+## TODOLIST
+- [ ] Fazer versão do script pra bookmark
+- [ ] Adicionar resposta pra lacunas de texto  
