@@ -3,6 +3,8 @@
 // @namespace    https://cmspweb.ip.tv/
 // @version      1.0
 // @description  hmmmm cheeto
+// @connect	     cmsp.ip.tv
+// @connect      edusp-api.ip.tv
 // @author       marcos10pc
 // @match        https://cmsp.ip.tv/*
 // @grant        GM_xmlhttpRequest
@@ -139,7 +141,7 @@
                                             setTimeout(() => {
                                                 document.querySelector('button.MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedInherit.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorInherit.css-prsfpd').click();
                                             }, 500);
-                                        }  
+                                        }
                                     }
                                 })
                             }
