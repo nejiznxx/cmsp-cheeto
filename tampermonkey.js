@@ -138,7 +138,7 @@
                                             watermark.style.fontSize = '70px';
                                             setTimeout(() => {
                                                 document.querySelector('button.MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedInherit.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorInherit.css-prsfpd').click();
-                                            }, 3000);
+                                            }, 500);
                                         }  
                                     }
                                 })
