@@ -17,4 +17,3 @@ as vezes da trabalho pra krl fazer essas porra se tu poder colocar uma estrela n
 
 ## TODOLIST
 - [ ] Fazer versão do script pra bookmark
-- [ ] Adicionar resposta pra lacunas de texto  
