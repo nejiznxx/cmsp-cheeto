@@ -38,6 +38,16 @@
                     question_type: taskQuestion.type,
                     answer: answer
                 };
+            } else if (taskQuestion.type === "text_ai") {
+                answer = taskQuestion.comment
+                answer = answer.replace(/<\/?p>/g, '')
+                novoJson.answers[questionId] = {
+                    question_id: question.question_id,
+                    question_type: taskQuestion.type,
+                    answer: {
+                        "0": answer
+                    }
+                };
             } else if (taskQuestion.type === "fill-letters") {
                 let answer = taskQuestion.options.answer;
 
@@ -128,8 +138,8 @@
                                         "X-Api-Key": x_auth_key,
                                         "Content-Type": "application/json"
                                     },
-                                    onload: function(response){
-                                        if (response.status !== 200){
+                                    onload: function(response) {
+                                        if (response.status !== 200) {
                                             alert(`[ERRO] alguma porra aconteceu tentando enviar as resposta RESPONSE: ${response.responseText} `)
                                         }
                                         console.log(`[DEBUG] Anwsers Sent! RESPONSE: ${response.responseText}`)
