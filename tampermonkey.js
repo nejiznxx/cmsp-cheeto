@@ -39,7 +39,7 @@
                     answer: answer
                 };
             } else if (taskQuestion.type === "text_ai") {
-                answer = taskQuestion.comment
+                let answer = taskQuestion.comment
                 answer = answer.replace(/<\/?p>/g, '')
                 novoJson.answers[questionId] = {
                     question_id: question.question_id,
