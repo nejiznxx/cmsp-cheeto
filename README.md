@@ -17,3 +17,6 @@ as vezes da trabalho pra krl fazer essas porra se tu poder colocar uma estrela n
 
 ## TODOLIST
 - [ ] Fazer versão do script pra bookmark
+
+
+ cmsp cheeto © 2024 by marcos10pc is licensed under CC BY-NC 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/4.0/
