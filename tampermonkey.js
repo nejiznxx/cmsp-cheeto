@@ -128,27 +128,21 @@
 
                         console.log(`[DEBUG] Sending Answers... BODY: ${JSON.stringify(send_anwsers_body)}`);
 
-                        let min = 3 * 1000
-                        let max = 5 * 1000
-                        let waitTime = Math.floor(Math.random() * (max - min + 1)) + min;
+                        sendRequest("PUT", `https://edusp-api.ip.tv/tms/task/${id}/answer/${task_id}`, send_anwsers_body, (response) => {
+                            if (response.status !== 200) {
+                                alert(`[ERROR] An error occurred while sending the answers. RESPONSE: ${response.responseText}`);
+                            }
+                            console.log(`[DEBUG] Answers Sent! RESPONSE: ${response.responseText}`);
 
-                        setTimeout(() => {
-                            sendRequest("PUT", `https://edusp-api.ip.tv/tms/task/${id}/answer/${task_id}`, send_anwsers_body, (response) => {
-                                if (response.status !== 200) {
-                                    alert(`[ERROR] An error occurred while sending the answers. RESPONSE: ${response.responseText}`);
-                                }
-                                console.log(`[DEBUG] Answers Sent! RESPONSE: ${response.responseText}`);
-                            });
-                        }, waitTime)
-
-                        const watermark = document.querySelector('.MuiTypography-root.MuiTypography-body1.css-1exusee');
-                        if (watermark) {
-                            watermark.textContent = 'Made by marcos10pc :P';
-                            watermark.style.fontSize = '70px';
-                            setTimeout(() => {
-                                document.querySelector('button.MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedInherit.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorInherit.css-prsfpd').click();
-                            }, 500);
-                        }
+                            const watermark = document.querySelector('.MuiTypography-root.MuiTypography-body1.css-1exusee');
+                            if (watermark) {
+                                watermark.textContent = 'Made by marcos10pc :P';
+                                watermark.style.fontSize = '70px';
+                                setTimeout(() => {
+                                    document.querySelector('button.MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedInherit.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorInherit.css-prsfpd').click();
+                                }, 500);
+                            }
+                        });
                     });
                 });
             }
