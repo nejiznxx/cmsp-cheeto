@@ -36,12 +36,24 @@
                     question_type: taskQuestion.type,
                     answer: answer
                 };
+            } else if (taskQuestion.type === "fill-words") {
+                let pre_anwser = taskQuestion.options
+                let anwser = pre_anwser.phrase.map(item => item.value);
+                //console.log(`[DEBUG] ${JSON.stringify(anwser)}`)
+                novoJson.answers[questionId] = {
+                    question_id: question.question_id,
+                    question_type: taskQuestion.type,
+                    answer: anwser
+                };
+
             } else if (taskQuestion.type === "text_ai") {
                 let answer = taskQuestion.comment.replace(/<\/?p>/g, '');
                 novoJson.answers[questionId] = {
                     question_id: question.question_id,
                     question_type: taskQuestion.type,
-                    answer: { "0": answer }
+                    answer: {
+                        "0": answer
+                    }
                 };
             } else if (taskQuestion.type === "fill-letters") {
                 let answer = taskQuestion.options.answer;
