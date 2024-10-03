@@ -128,7 +128,9 @@
 
                         console.log(`[DEBUG] Sending Answers... BODY: ${JSON.stringify(send_anwsers_body)}`);
 
-                        let waitTime = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;
+                        let min = 3 * 1000
+                        let max = 5 * 1000
+                        let waitTime = Math.floor(Math.random() * (max - min + 1)) + min;
 
                         setTimeout(() => {
                             sendRequest("PUT", `https://edusp-api.ip.tv/tms/task/${id}/answer/${task_id}`, send_anwsers_body, (response) => {
