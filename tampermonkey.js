@@ -133,15 +133,6 @@
                                 alert(`[ERROR] An error occurred while sending the answers. RESPONSE: ${response.responseText}`);
                             }
                             console.log(`[DEBUG] Answers Sent! RESPONSE: ${response.responseText}`);
-
-                            const watermark = document.querySelector('.MuiTypography-root.MuiTypography-body1.css-1exusee');
-                            if (watermark) {
-                                watermark.textContent = 'Made by marcos10pc :P';
-                                watermark.style.fontSize = '70px';
-                                setTimeout(() => {
-                                    document.querySelector('button.MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedInherit.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorInherit.css-prsfpd').click();
-                                }, 500);
-                            }
                         });
                     });
                 });
