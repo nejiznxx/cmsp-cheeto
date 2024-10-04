@@ -8,7 +8,7 @@
 // @author       marcos10pc
 // @match        https://cmsp.ip.tv/*
 // @icon         https://edusp-static.ip.tv/permanent/66aa8b3a1454f7f2b47e21a3/full.x-icon
-// @license      Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+// @license      GNU Affero General Public License v3.0
 // ==/UserScript==
 
 (function() {
