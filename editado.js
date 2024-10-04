@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         cmsp cheeto
+// @name         cmsp editadin
 // @namespace    https://cmspweb.ip.tv/
 // @version      1.0
 // @description  hmmmm cheeto
