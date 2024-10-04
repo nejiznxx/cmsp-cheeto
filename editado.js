@@ -37,9 +37,8 @@
                     answer: answer
                 };
             } else if (taskQuestion.type === "fill-words") {
-                let pre_anwser = taskQuestion.options
+                let pre_anwser = taskQuestion.options;
                 let anwser = pre_anwser.phrase.map(item => item.value);
-                //console.log(`[DEBUG] ${JSON.stringify(anwser)}`)
                 novoJson.answers[questionId] = {
                     question_id: question.question_id,
                     question_type: taskQuestion.type,
@@ -95,9 +94,12 @@
                 let id = oldHref.split("/")[6];
                 console.log(`[DEBUG] LESSON_ID: ${id} ROOM_NAME: ${room_name}`);
 
+                let currentTime = new Date();
+                let simulatedTime = new Date(currentTime.getTime() - (30 * 60 * 1000)); // Simula 30 minutos antes
+
                 let draft_body = {
                     status: "draft",
-                    accessed_on: "room",
+                    accessed_on: simulatedTime.toISOString(),   // Simulando o tempo de acesso
                     executed_on: room_name,
                     answers: {}
                 };
