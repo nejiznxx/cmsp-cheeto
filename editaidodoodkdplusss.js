@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         cmsp edtjjs
+// @name         cmsp cheetopluis
 // @namespace    https://cmspweb.ip.tv/
 // @version      1.0
 // @description  hmmmm cheeto
@@ -18,10 +18,14 @@
     console.log("-- STARTING CMSP CHEETO By marcos10pc --");
 
     function transformJson(jsonOriginal) {
+        // Simula tempo de execução de até 2 minutos
+        let startTime = new Date();
+        let executed_on = new Date(startTime.getTime() + Math.floor(Math.random() * 120000)); // Até 2 minutos aleatórios
+
         let novoJson = {
             status: "submitted",
             accessed_on: jsonOriginal.accessed_on,
-            executed_on: jsonOriginal.executed_on,
+            executed_on: executed_on.toISOString(),  // Usa o tempo simulado
             answers: {}
         };
 
@@ -125,28 +129,23 @@
                         let get_anwsers_response = JSON.parse(response.responseText);
                         let send_anwsers_body = transformJson(get_anwsers_response);
 
-                        console.log(`[DEBUG] Simulating delay before sending answers...`);
-                        
-                        // Atraso de 30 minutos antes de enviar as respostas
-                        setTimeout(() => {
-                            console.log(`[DEBUG] Sending Answers... BODY: ${JSON.stringify(send_anwsers_body)}`);
+                        console.log(`[DEBUG] Sending Answers... BODY: ${JSON.stringify(send_anwsers_body)}`);
 
-                            sendRequest("PUT", `https://edusp-api.ip.tv/tms/task/${id}/answer/${task_id}`, send_anwsers_body, (response) => {
-                                if (response.status !== 200) {
-                                    alert(`[ERROR] An error occurred while sending the answers. RESPONSE: ${response.responseText}`);
-                                }
-                                console.log(`[DEBUG] Answers Sent! RESPONSE: ${response.responseText}`);
+                        sendRequest("PUT", `https://edusp-api.ip.tv/tms/task/${id}/answer/${task_id}`, send_anwsers_body, (response) => {
+                            if (response.status !== 200) {
+                                alert(`[ERROR] An error occurred while sending the answers. RESPONSE: ${response.responseText}`);
+                            }
+                            console.log(`[DEBUG] Answers Sent! RESPONSE: ${response.responseText}`);
 
-                                const watermark = document.querySelector('.MuiTypography-root.MuiTypography-body1.css-1exusee');
-                                if (watermark) {
-                                    watermark.textContent = 'sussy baka amongus';
-                                    watermark.style.fontSize = '70px';
-                                    setTimeout(() => {
-                                        document.querySelector('button.MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedInherit.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorInherit.css-prsfpd').click();
-                                    }, 500);
-                                }
-                            });
-                        }, 1800000);  // Atraso de 30 minutos (30 * 60 * 1000 ms)
+                            const watermark = document.querySelector('.MuiTypography-root.MuiTypography-body1.css-1exusee');
+                            if (watermark) {
+                                watermark.textContent = 'sussy baka amongus';
+                                watermark.style.fontSize = '70px';
+                                setTimeout(() => {
+                                    document.querySelector('button.MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedInherit.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-colorInherit.css-prsfpd').click();
+                                }, 500);
+                            }
+                        });
                     });
                 });
             }
